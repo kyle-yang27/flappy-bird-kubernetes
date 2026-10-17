@@ -1,0 +1,12 @@
+
+# macOS files
+.DS_Store
+
+# VS Code workspace settings
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
