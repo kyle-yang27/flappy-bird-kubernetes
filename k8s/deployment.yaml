@@ -1,0 +1,36 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flappy-bird
+  labels:
+    app: flappy-bird
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flappy-bird
+  template:
+    metadata:
+      labels:
+        app: flappy-bird
+    spec:
+      containers:
+        - name: flappy-bird
+          image: flappy-bird:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
