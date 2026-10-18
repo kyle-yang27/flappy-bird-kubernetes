@@ -2,6 +2,8 @@
 
 A browser-based Flappy Bird game containerized with Docker and deployed to a local Kubernetes cluster using Docker Desktop.
 
+![Flappy Bird gameplay](screenshots/flappy-bird-gameplay.png)
+
 ## Overview
 
 This project packages a standalone HTML, CSS, and JavaScript game with Nginx, then deploys it to Kubernetes using a Deployment and NodePort Service.
